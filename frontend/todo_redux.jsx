@@ -6,10 +6,10 @@ import configureStore from './store/store';
 
 document.addEventListener("DOMContentLoaded", function () {
     const root = document.getElementById("content");
-    
-    ReactDOM.render(<Root />, root)
-
     const store = configureStore();
     window.store = store;
+    
+    ReactDOM.render(<Root store={store}/>, root)
+
     
 });
