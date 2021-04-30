@@ -1,7 +1,22 @@
-import { RECEIVE_STEPS, RECEIVE_STEP, REMOVE_STEP } from './actions/step_actions'
+import { RECEIVE_STEPS, RECEIVE_STEP, REMOVE_STEP } from '../actions/step_actions.js';
+const initialState = {
+  
+        1: { // this is the step with id = 1
+            id: 1,
+                title: 'walk to store',
+                    done: false,
+                        todo_id: 1
+        },
+        2: { // this is the step with id = 2
+            id: 2,
+                title: 'buy soap',
+                    done: false,
+           todo_id: 1
+        }
 
+}
 
-const stepsReducer = (state = {}, action) => {
+const stepsReducer = (state = initialState, action) => {
     Object.freeze(state);
     const nextState = Object.assign({}, state);
 
@@ -11,9 +26,11 @@ const stepsReducer = (state = {}, action) => {
         case RECEIVE_STEP:
             nextState[action.step.id] = action.step
         case REMOVE_STEP:
-            delete nextState[action.todo.id];
+            delete nextState[action.step.id];
             return nextState;
         default:
             return state;
     }
 }
+
+export default stepsReducer;

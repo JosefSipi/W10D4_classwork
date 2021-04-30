@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 import todosReducer from './todos_reducer';
-import stepReducer from './steps_reducer';
+import stepsReducer from './steps_reducer';
 
 const rootReducer = (state, action) => {
     return {

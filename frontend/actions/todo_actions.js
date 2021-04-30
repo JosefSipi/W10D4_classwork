@@ -12,7 +12,7 @@ export const receiveTodos = (todos) => {
 };
 
 export const receiveTodo = (todo) => {
-    debugger
+
     return {
         type: RECEIVE_TODO,
         todo
